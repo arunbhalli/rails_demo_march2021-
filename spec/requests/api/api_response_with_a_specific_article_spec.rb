@@ -1,9 +1,9 @@
 RSpec.describe 'Get /api/articles/id', type: :request do
-
-  let!(:article) { create(:article, title: 'Fun with RSpec!', body: 'This is the article of my content!') }
+  let!(:article) { create(:article, title: 'Fun with RSpec!', body: 'This is the content of my article!') }
+  # let!(:article) { create(:article, title: 'Fun with RSpec!', body: 'This is  content of my article') }
 
   before do
-  get "/api/articles/#{article.id}"
+    get "/api/articles/#{article.id}"
   end
 
   it 'is expected to respond with 200' do
@@ -15,5 +15,9 @@ RSpec.describe 'Get /api/articles/id', type: :request do
 
   it 'is expected to include the article body' do
     expect(JSON.parse(response.body)['article']['body']).to eq 'This is the article of my content!'
+
    end
+
 end
+
+
