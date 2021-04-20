@@ -7,9 +7,6 @@ class Api::ArticlesController < ApplicationController
   end
   def show 
     article = Article.find(params[:id])
-    render json: {article: article }
-  end
-  def create 
-    binding.pry
+    render json: { article: article}
   end
 end
