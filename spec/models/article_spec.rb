@@ -6,6 +6,9 @@ RSpec.describe Article, type: :model do
     it {is_expected.to have_db_column(:body).of_type(:text)}
   end
 
+  describe "Validations" do 
+    # it{ is_expected.to  validate_presence_of(:title)}
+  end
   describe 'Factory' do
     it 'is expected to be valid' do
       expect(create(:article)).to be_valid
